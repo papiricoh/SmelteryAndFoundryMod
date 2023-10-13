@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "smelteryandfoundrymod",
+  "version": "${version}",
+  "name": "smelteryAndFoundryMod",
+  "description": "",
+  "authors": [],
+  "contact": {
+    "repo": "https://github.com/pabloricoal/smelteryAndFoundryMod"
+  },
+  "license": "All-Rights-Reserved",
+  "icon": "assets/smelteryandfoundrymod/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "org.papiricoh.smelteryandfoundrymod.client.SmelteryAndFoundryModClient"
+    ],
+    "main": [
+      "org.papiricoh.smelteryandfoundrymod.SmelteryAndFoundryMod"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
