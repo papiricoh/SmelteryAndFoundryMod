@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "MM",
+    "MM"
+  ],
+  "key": {
+    "M": {
+      "item": "saf:marble_block"
+    }
+  },
+  "result": {
+    "item": "saf:polished_marble_block",
+    "count": 4
+  }
+}
