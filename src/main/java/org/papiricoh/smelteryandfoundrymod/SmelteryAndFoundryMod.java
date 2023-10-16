@@ -40,6 +40,14 @@ public class SmelteryAndFoundryMod implements ModInitializer {
 
     @Override
     public void onInitialize() {
+        loadMarbleBlocks();
+
+
+        BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, MARBLE_ORE);
+    }
+
+
+    private void loadMarbleBlocks() {
         Registry.register(Registries.ITEM_GROUP, new Identifier("saf", "saf_blocks"), ITEM_GROUP_BLOCKS);
         Registry.register(Registries.BLOCK, new Identifier("saf", "marble_block"), MARBLE_BLOCK);
         Registry.register(Registries.ITEM, new Identifier("saf", "marble_block"), new BlockItem(MARBLE_BLOCK, new Item.Settings()));
@@ -47,9 +55,5 @@ public class SmelteryAndFoundryMod implements ModInitializer {
         Registry.register(Registries.ITEM, new Identifier("saf", "polished_marble_block"), new BlockItem(POLISHED_MARBLE_BLOCK, new Item.Settings()));
         Registry.register(Registries.BLOCK, new Identifier("saf", "marble_bricks_block"), MARBLE_BRICKS_BLOCK);
         Registry.register(Registries.ITEM, new Identifier("saf", "marble_bricks_block"), new BlockItem(MARBLE_BRICKS_BLOCK, new Item.Settings()));
-
-        BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, MARBLE_ORE);
     }
-
-
 }
