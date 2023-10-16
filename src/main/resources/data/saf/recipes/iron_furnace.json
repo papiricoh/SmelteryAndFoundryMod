@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "DID",
+    "IFI",
+    "DID"
+  ],
+  "key": {
+    "F": {
+      "item": "minecraft:furnace"
+    },
+    "D": {
+      "item": "minecraft:diorite"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "result": {
+    "item": "saf:iron_furnace",
+    "count": 1
+  }
+}
