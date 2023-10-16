@@ -15,6 +15,7 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.feature.PlacedFeature;
+import org.papiricoh.smelteryandfoundrymod.blocks.IronFurnace;
 import org.papiricoh.smelteryandfoundrymod.blocks.MarbleBlock;
 
 public class SmelteryAndFoundryMod implements ModInitializer {
@@ -24,6 +25,7 @@ public class SmelteryAndFoundryMod implements ModInitializer {
     public static final Block MARBLE_BLOCK = new MarbleBlock(FabricBlockSettings.create().strength(4.0f));
     public static final Block POLISHED_MARBLE_BLOCK = new MarbleBlock(FabricBlockSettings.create().strength(4.0f));
     public static final Block MARBLE_BRICKS_BLOCK = new MarbleBlock(FabricBlockSettings.create().strength(4.0f));
+    public static final Block IRON_FURNACE = new IronFurnace(FabricBlockSettings.create().strength(4.0f));
 
     public static final RegistryKey<PlacedFeature> MARBLE_ORE = RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier("saf","marble_ore"));
 
@@ -35,15 +37,16 @@ public class SmelteryAndFoundryMod implements ModInitializer {
                 entries.add(MARBLE_BLOCK);
                 entries.add(POLISHED_MARBLE_BLOCK);
                 entries.add(MARBLE_BRICKS_BLOCK);
+                entries.add(IRON_FURNACE);
             })
             .build();
 
     @Override
     public void onInitialize() {
         loadMarbleBlocks();
+        Registry.register(Registries.BLOCK, new Identifier("saf", "iron_furnace"), IRON_FURNACE);
+        Registry.register(Registries.ITEM, new Identifier("saf", "iron_furnace"), new BlockItem(IRON_FURNACE, new Item.Settings()));
 
-
-        BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, MARBLE_ORE);
     }
 
 
@@ -55,5 +58,7 @@ public class SmelteryAndFoundryMod implements ModInitializer {
         Registry.register(Registries.ITEM, new Identifier("saf", "polished_marble_block"), new BlockItem(POLISHED_MARBLE_BLOCK, new Item.Settings()));
         Registry.register(Registries.BLOCK, new Identifier("saf", "marble_bricks_block"), MARBLE_BRICKS_BLOCK);
         Registry.register(Registries.ITEM, new Identifier("saf", "marble_bricks_block"), new BlockItem(MARBLE_BRICKS_BLOCK, new Item.Settings()));
+
+        BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, MARBLE_ORE);
     }
 }

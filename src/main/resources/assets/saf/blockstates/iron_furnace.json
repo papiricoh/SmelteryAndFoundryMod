@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=east": { "model": "saf:block/iron_furnace" },
+    "facing=south": { "model": "saf:block/iron_furnace", "y": 90 },
+    "facing=west": { "model": "saf:block/iron_furnace", "y": 180 },
+    "facing=north": { "model": "saf:block/iron_furnace", "y": 270 }
+  }
+}

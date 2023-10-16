@@ -1,0 +1,23 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "particle": "saf:block/tier_one/iron_furnace",
+    "all": "saf:block/tier_one/iron_furnace",
+    "bottom": "block/iron_block",
+    "top": "block/iron_block",
+    "face": "saf:block/tier_one/iron_furnace_front"
+  },"elements": [
+    {
+      "from": [ 0, 0, 0 ],
+      "to": [ 16, 16, 16 ],
+      "faces": {
+        "down":  { "texture": "#bottom", "cullface": "down" },
+        "up":    { "texture": "#top", "cullface": "up" },
+        "north": { "texture": "#all", "cullface": "north" },
+        "south": { "texture": "#all", "cullface": "south" },
+        "west":  { "texture": "#all", "cullface": "west" },
+        "east":  { "texture": "#face", "cullface": "east" }
+      }
+    }
+  ]
+}
